@@ -1,0 +1,59 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: #141414;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background: black;
+    padding: 20px 40px;
+}
+
+.logo {
+    color: #E50914;
+    font-size: 2rem;
+    letter-spacing: 3px;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://picsum.photos/1200/600') center/cover;
+}
+
+.hero h2 { font-size: 2.5rem; margin-bottom: 15px; }
+.hero p  { font-size: 1.2rem; margin-bottom: 30px; color: #ccc; }
+
+.btn {
+    background: #E50914;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.movies { padding: 40px; }
+.movies h3 { font-size: 1.5rem; margin-bottom: 20px; color: #E50914; }
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.movie-card {
+    background: #333;
+    padding: 40px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.movie-card:hover { transform: scale(1.05); background: #E50914; }

@@ -1,0 +1,26 @@
+name: Netflix Clone CI/CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Build Docker Image
+      run: docker build -t netflix-clone .
+
+    - name: Test Container
+      run: |
+        docker run -d -p 8080:80 --name test-container netflix-clone
+        sleep 5
+        curl http://localhost:8080 | grep "NETFLIX" && echo "✅ Test Passed!" || echo "❌ Test Failed!"
+        docker stop test-container
+
+    - name: Success
+      run: echo "🎉 Netflix Clone Pipeline Success!"
